@@ -1,0 +1,17 @@
+body {
+    background-image: url("/assets/images/background.jpg");
+    padding-top: 70px;
+}
+
+.deleteNote {
+	display: inline-block;
+}
+
+.previousNotes {
+    display: inline-block;
+    width: 90%
+}
+
+button {
+    margin: 8px 8px;
+}
