@@ -18,11 +18,11 @@ app.engine("handlebars", exphbs({
     partialsDir: path.join(__dirname, "/views/layouts/partials")
  }));
 app.set("view engine", "handlebars");
-
-mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/mongo_scraper", {
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongo_scraper", {
     useMongoClient: true
-});
+};
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
 
 var routes = require("./routes/html-routes.js");
 app.use("/", routes)
