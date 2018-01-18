@@ -18,9 +18,7 @@ app.engine("handlebars", exphbs({
     partialsDir: path.join(__dirname, "/views/layouts/partials")
  }));
 app.set("view engine", "handlebars");
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongo_scraper", {
-    useMongoClient: true
-};
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongo_scraper";
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 
